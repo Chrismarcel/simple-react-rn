@@ -11,8 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        syncMessage : null,
-        progress : null
+      syncMessage : null,
+      progress : null
     }
   }
   
@@ -39,21 +39,21 @@ class App extends Component {
       <Text style={styles.title}>Todo List</Text>
       <View style={styles.card}>
         <TextInput style={styles.input} placeholder={"Input text"} 
-                    value={newToDo} onChangeText={this.handleTodoChange}
-                    placeholderTextColor={"#999"} returnKeyType={"done"} autoCorrect={false}
-                    onSubmitEditing={this.getSingleTodoItem}
-                    underlineColorAndroid={"transparent"}/> 
+          value={newToDo} onChangeText={this.handleTodoChange}
+          placeholderTextColor={"#999"} returnKeyType={"done"} autoCorrect={false}
+          onSubmitEditing={this.getSingleTodoItem}
+          underlineColorAndroid={"transparent"}/> 
         <ScrollView contentContainerStyle={styles.todos}> 
           {
             Object.values(toDos)
             .reverse()
             .map(toDo => 
               <TodoItem key={toDo.id} 
-                    deleteToDo={this.handleTodoDelete}
-                    completedToDo={this.handleCompleteTodo}
-                    unCompletedToDo={this.handleIncompleteTodo}
-                    updateToDo={this.handleTodoUpdate}
-                    {...toDo} />
+                deleteToDo={this.handleTodoDelete}
+                completedToDo={this.handleCompleteTodo}
+                unCompletedToDo={this.handleIncompleteTodo}
+                updateToDo={this.handleTodoUpdate}
+                {...toDo} />
             )
           }
         </ScrollView>       

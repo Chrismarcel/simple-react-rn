@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const { width } = Dimensions.get("window");
 
 class TodoItem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             isEditing: false,
@@ -22,7 +22,7 @@ class TodoItem extends Component {
         updateToDo: PropTypes.func.isRequired
     }
     
-    render(){
+    render() {
         const { isEditing, toDoValue } = this.state;
         const { text, id, deleteToDo, isCompleted } = this.props;
 
